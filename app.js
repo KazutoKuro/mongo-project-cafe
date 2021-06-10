@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 
 const app = express();
@@ -21,7 +22,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
   .catch((err) => console.log(err));
 
 // routes
-
+app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
 app.get('/account', (req, res) => res.render('account'));
+app.get('/menulistcafe', requireAuth, (req, res) => res.render('menulistcafe'));
+app.get('/menulistjuices', requireAuth, (req, res) => res.render('menulistjuices'));
 app.use(authRoutes);

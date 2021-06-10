@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko:300,400&display=swap');
 
 /* Nav Start */
 
@@ -617,4 +618,109 @@ body,html{
 		opacity: 1;
 		z-index: 5;
 	}
+}
+
+/*Menu */
+.menu{
+    background-color: #ede2db;
+    padding: 60px 0;
+    display: block;
+}
+
+
+.menu .section-heading h4{
+    text-transform: uppercase;
+    color: #101D2C;
+    line-height: 0;
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.menu .section-heading h1{
+    font-size: 60px;
+    font-family: 'Niconne', cursive;
+    color: #c69963;
+}
+
+
+.menu-item-desc{
+    padding: 50px 10px;
+    color: #212529;
+    margin: auto;
+    height: 200px;
+}
+
+.menu-item-desc h6{
+    color: #c69963;
+    font-size: 20;
+}
+
+.menu-item-desc h1{
+    color: #101D2C;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: 'Teko',sans-serif;
+    font-weight: 300;
+}
+
+.menu .btn{
+    width: 150px;
+    color: #c69963 !important;
+    transition: background-color 650ms;
+    border: 1px solid #c69963;
+}
+
+.menu .btn:hover{
+    color: #ffffff !important;
+    background-color: #c69963;
+}
+
+
+.point-left, .point-right{
+    position: relative;
+    background-color: #fff;
+    display: flex;
+}
+
+.point-left::before, .point-right::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: inherit;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 1;
+}
+
+@media (min-width: 576px){
+    .point-right::before, .point-left::before{
+        display:none;
+    }
+    .menu-item-desc{
+        padding: 50px 20px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .point-right::before, .point-left::before{
+        display:block;
+        top: 50%;
+        left: initial;
+        transform: translate(0, -50%) rotate(45deg);
+    }
+    .point-left::before{
+        left: -12px;
+    }
+    .point-right::before{
+        right: -12px;
+    }
+    .menu-item-desc p{
+        display: none;
+    }
 }

@@ -35,13 +35,16 @@
                   <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="/menulistcafe">Coffee</a>
                     <a class="dropdown-item" href="/menulistjuices">Juices</a>
-                    <a class="dropdown-item" href="/menulistbakery">Bakery</a>
                   </div>
                 </li>
               </ul>
 
               <ul class="navbar-nav ml-auto">
-                <a class="nav-link" href="/account">Account<span class="sr-only">(current)</span></a>           
+                <% if (user) { %>
+                  <li><a class="nav-link" href="/logout">Log Out<span class="sr-only">(current)</span></a></li>   
+                <% } else { %> 
+                  <li><a class="nav-link" href="/account">Account<span class="sr-only">(current)</span></a></li>   
+                <% } %>
               </ul>
             </div>
         </div>
