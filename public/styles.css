@@ -1,0 +1,620 @@
+
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Nav Start */
+
+.mt-1 {
+    padding-top: 1em !important;
+}
+.mt-2 {
+    padding-top: 2em !important;
+}
+.mt-4 {
+    padding-top: 4em !important;
+}
+.mt-5 {
+    padding-top: 5em !important;
+}
+
+.bg-brand {
+    background-color: #101D2C;
+}
+
+.bg-brand-secondary {
+    background-color: #101D2C;
+}
+
+.bg-brand .logo{
+    font-family: 'Niconne', cursive;
+    font-size: 24px;
+    padding-top: 0em;
+}
+/* Nav End */
+
+/* Home Start */
+
+body,html{
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666666;
+}
+
+.pimg1, .pimg2, .pimg3{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /*
+    fixed = parallax
+    scroll = normal
+    */
+    background-attachment: fixed;
+
+}
+
+.pimg1{
+    background-image: url(/homeimg/cafehome1.jpg);
+    min-height: 100%;
+}
+
+.pimg2{
+    background-image:url(/bakeryimg/bakery1.jpg);
+    min-height: 300px;
+}
+
+.pimg3{
+    background-image:url(/homeimg/cafehome1.jpg);
+    min-height: 300px;
+}
+
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666666;
+}
+
+.section-light h2{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.section-light hr{
+    border-bottom: 1px solid #282e34;
+}
+
+.section-light p{
+    font-size: 20px;
+}
+
+.hometext{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.hometext h2{
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    font-family: 'Niconne', sans-serif;
+  }
+  
+.hometext p{
+    font-size: 40px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Niconne', cursive;
+    padding-bottom: 20px;
+  }
+
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.ptext .border{
+    background-color: #111111;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.ptext .border.trans{
+    background-color: transparent;
+}
+
+@media(max-width:568px){
+    .pimg1, .pimg2, .pimg3{
+        background-attachment: scroll;
+    }
+}
+
+/* Home Main Service */
+
+.services-section{
+    padding: 60px 0;
+    font-family: "montserrat",sans-serif;
+    box-sizing: border-box;
+  }
+
+.services-section .inner-width{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+  
+.services-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.service-box{
+    max-width: 33.33%;
+    padding: 10px;
+    text-align: center;
+    color: #666666;
+    cursor: pointer;
+}
+  
+.service-icon{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    border: 3px solid #c69963 !important;
+    color: #c69963;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    margin-top: 16px;
+    transition: 0.3s linear;
+}
+  
+.service-icon i{
+    line-height: 70px;
+    transform: rotate(-45deg);
+    font-size: 26px;
+}
+  
+.service-box:hover .service-icon{
+    background: #c69963;
+    color: #ffffff;
+}
+  
+.service-title{
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+  
+.service-desc{
+    font-size: 14px;
+    font-weight: bold;
+}
+  
+@media screen and (max-width:960px) {
+    .service-box{
+      max-width: 45%;
+    }
+}
+  
+@media screen and (max-width:768px) {
+    .service-box{
+      max-width: 50%;
+    }
+}
+  
+@media screen and (max-width:480px) {
+    .service-box{
+      max-width: 100%;
+    }
+}
+
+/*Counter Number */
+.middle{
+    font-family: "montserrat",sans-serif;
+    position: relative;
+    width: 100%;
+}
+
+.counting-sec{
+    padding: 40px 0;
+    width: 100%;
+    /* background: linear-gradient(90deg,#3c6382,#82ccdd); */
+    background: url(/homeimg/cafehome1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.inner-width{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+.col{
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.col i{
+    font-size: 40px;
+    color: #c69963;
+}
+
+.num{
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+/* Blog Card */
+.section-dark{
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    align-items: center;
+    font-family: "montserrat",sans-serif;
+}
+
+.section-dark .container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.section-dark .container .card{
+    position: relative;
+    max-width: 300px;
+    height: 240px;
+    background: #ffffff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.2);
+    border-radius: 2%;
+    transition: 0.3s ease-in-out;
+}
+
+.section-dark .container .card:hover{
+    height: 550px;
+}
+
+.section-dark .container .card .imgBx{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 5px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section-dark .container .card .imgBx img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.section-dark .container .card .content{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.section-dark .container .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+.section-dark .content h2{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #c69963;
+    text-align: left;
+}
+
+.section-dark .content p{
+    font-size: 14px;
+    text-align: left;
+}
+
+.section-dark .content .date{
+    font-size: 14px;
+    text-align: left;
+    color: #666666;
+}
+
+.blog .btn{
+    width: 300px;
+    color: #c69963 !important;
+    transition: background-color 650ms;
+    border: 1px solid #c69963;
+    font-size: 20px;
+    font-family: "montserrat",sans-serif;
+    text-transform: uppercase;
+}
+
+.blog .btn:hover{
+    color: #ffffff !important;
+    background-color: #c69963;
+}
+/* Home End */
+
+/* Account Start */
+
+
+.account {
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	background-image: url(homeimg/cafehome3.jpg);
+	background-size: cover;
+	min-height: 50%; 
+	padding-top: 120px;
+	padding-bottom: 100px;
+	box-sizing: border-box;
+}
+
+.account h3 {
+	font-weight: bold;
+	margin: 0;
+}
+
+.account p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
+}
+
+.account .form-container span {
+	font-size: 12px;
+}
+
+.account .form-container a {
+	color: #333 !important;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+.account button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 5px 35px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.account button:active {
+	transform: scale(0.95);
+}
+
+.account button:focus {
+	outline: none;
+}
+
+.account button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+.account form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+.account .sign-up-container form .error, .account .sign-in-container form .error {
+    color: #ff0099;
+    font-weight: 500;
+	font-size: 0.75em;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+.account .container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.account .form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.account .social-container {
+	margin: 20px 0;
+}
+
+.account .social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+.account .form-container input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	font-weight: 500;
+	font-size: 12px;
+}
+
+.account .overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.account .overlay {
+    background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.account .overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.account .overlay-left {
+	transform: translateX(-20%);
+}
+
+.account .overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.account .sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+/* Animation */
+
+/* Move sign in to the right */
+
+.account .container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+/* Move overlay to left */
+
+.account .container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.account .container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.account .sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+/* Bring sign up over sign in */
+
+.account .container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+/* Move overlay back to right */
+
+.account .container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.account .container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}

@@ -1,0 +1,159 @@
+<%- include('partials/header'); -%>
+    
+    <section class="account">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form class="signup-form">
+                    <h3>Create Account</h3>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+
+                    <input type="email" name="email" placeholder="Email" required/>
+                    <div class="email error"></div>
+
+                    <input type="password" name="password" placeholder="Password" required/>
+                    <div class="password error"></div>
+
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form class="signin-form">
+                    <h3>Sign in</h3>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+
+                    <input type="email" name="email" placeholder="Email" required />
+                    <div class="useremail error"></div>
+            
+                    <input type="password" name="password" placeholder="Password" required/>
+                    <div class="userpassword error"></div>
+
+                    <a href="#">Forgot your password?</a>
+
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h3>Welcome Back!</h3>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h3>Hello, Welcome from Mongo Cafe!</h1>
+                        <p>Enter your personal details and start to order</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Account Animation -->
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+        });
+    </script>
+
+    <!-- Sign Up -->
+    <script>
+        const signup_form = document.querySelector('.signup-form');
+        const emailError = document.querySelector('.email.error');
+        const passwordError = document.querySelector('.password.error');
+
+        signup_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            //reset errors
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+            //get the values
+            const email = signup_form.email.value;
+            const password = signup_form.password.value;
+
+            try{
+                const res = await fetch('/signup', {
+                    method: 'POST',
+                    body: JSON.stringify({email, password}),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                console.log(data);
+                if(data.errors){
+                    emailError.textContent = data.errors.email;
+                    passwordError.textContent = data.errors.password;
+                }
+                if(data.user){
+                    location.assign('/');
+                }
+            }
+            catch(err){
+                console.log(err);
+            }
+            
+        });
+    </script>
+
+    <!-- Login -->
+    <script>
+        const login_form = document.querySelector('.signin-form');
+        const useremailError = document.querySelector('.useremail.error');
+        const userpasswordError = document.querySelector('.userpassword.error');
+
+        login_form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            //reset errors
+            useremailError.textContent = '';
+            userpasswordError.textContent = '';
+
+            //get the values
+            const email = login_form.email.value;
+            const password = login_form.password.value;
+
+            try{
+                const res = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({email, password}),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                console.log(data);
+                if(data.errors){
+                    useremailError.textContent = data.errors.email;
+                    userpasswordError.textContent = data.errors.password;
+                }
+                if(data.user){
+                    location.assign('/');
+                }
+            }
+            catch(err){
+                console.log(err);
+            }
+        });
+    </script>
+    
+    
+
+<%- include('partials/footer'); -%>
